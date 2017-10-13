@@ -1,6 +1,11 @@
 # Connect-A-Lab
 
 ### BRA1N
+###### Brandon Bocek
+###### Austin Hester
+###### Roy Ivey
+###### Nick Nesbit
+
 ##### CS 4500 - Software Engineering
 ##### University of Missouri - St. Louis
 
