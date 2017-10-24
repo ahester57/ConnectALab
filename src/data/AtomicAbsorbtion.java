@@ -1,6 +1,8 @@
+package data;
+
 public class AtomicAbsorbtion {
 	private String libName;
-	private String methodtype;
+	private String methodType;
 	private String lampType;
 	private float wavelength;
 	private boolean bgrdCorr;
@@ -13,7 +15,7 @@ public class AtomicAbsorbtion {
 	private int backPress;
 	private int airFlow;
 	
-	public AtomicAbsorbtion(String libName, String methodType, String lampType, float wavelength, boolean, bgrdCorr, float slitWidth, int noiseCorr, int bgrdGain, int lampVolt, int detectorVolt, int aceFlow, int backPress, int airFlow) {
+	public AtomicAbsorbtion(String libName, String methodType, String lampType, float wavelength, boolean bgrdCorr, float slitWidth, int noiseCorr, int bgrdGain, int lampVolt, int detectorVolt, int aceFlow, int backPress, int airFlow) {
 		this.libName = libName;
 		this.methodType = methodType;
 		this.lampType = lampType;
