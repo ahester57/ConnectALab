@@ -36,8 +36,8 @@ public class ASController extends Application
 
         try {
             if (event.getSource() == button_view) {
-                root = FXMLLoader.load(getClass().getResource("game.fxml"));
-                scene = new Scene(root, 1280, 875);
+                root = FXMLLoader.load(getClass().getResource("analysis.fxml"));
+                scene = new Scene(root, 600, 400);
 
                 stage = (Stage) button_view.getScene().getWindow();
                 stage.setScene(scene);
