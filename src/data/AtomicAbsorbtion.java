@@ -30,4 +30,108 @@ public class AtomicAbsorbtion {
 		this.backPress = backPress;
 		this.airFlow = airFlow;
 	}
+
+	public String getLibName() {
+		return libName;
+	}
+
+	public void setLibName(String libName) {
+		this.libName = libName;
+	}
+
+	public String getMethodType() {
+		return methodType;
+	}
+
+	public void setMethodType(String methodType) {
+		this.methodType = methodType;
+	}
+
+	public String getLampType() {
+		return lampType;
+	}
+
+	public void setLampType(String lampType) {
+		this.lampType = lampType;
+	}
+
+	public float getWavelength() {
+		return wavelength;
+	}
+
+	public void setWavelength(float wavelength) {
+		this.wavelength = wavelength;
+	}
+
+	public boolean isBgrdCorr() {
+		return bgrdCorr;
+	}
+
+	public void setBgrdCorr(boolean bgrdCorr) {
+		this.bgrdCorr = bgrdCorr;
+	}
+
+	public float getSlitWidth() {
+		return slitWidth;
+	}
+
+	public void setSlitWidth(float slitWidth) {
+		this.slitWidth = slitWidth;
+	}
+
+	public int getNoiseCorr() {
+		return noiseCorr;
+	}
+
+	public void setNoiseCorr(int noiseCorr) {
+		this.noiseCorr = noiseCorr;
+	}
+
+	public int getBgrdGain() {
+		return bgrdGain;
+	}
+
+	public void setBgrdGain(int bgrdGain) {
+		this.bgrdGain = bgrdGain;
+	}
+
+	public int getLampVolt() {
+		return lampVolt;
+	}
+
+	public void setLampVolt(int lampVolt) {
+		this.lampVolt = lampVolt;
+	}
+
+	public int getDetectorVolt() {
+		return detectorVolt;
+	}
+
+	public void setDetectorVolt(int detectorVolt) {
+		this.detectorVolt = detectorVolt;
+	}
+
+	public int getAceFlow() {
+		return aceFlow;
+	}
+
+	public void setAceFlow(int aceFlow) {
+		this.aceFlow = aceFlow;
+	}
+
+	public int getBackPress() {
+		return backPress;
+	}
+
+	public void setBackPress(int backPress) {
+		this.backPress = backPress;
+	}
+
+	public int getAirFlow() {
+		return airFlow;
+	}
+
+	public void setAirFlow(int airFlow) {
+		this.airFlow = airFlow;
+	}
 }
