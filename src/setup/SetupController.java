@@ -17,13 +17,12 @@ public class SetupController extends Application
 {
 
     @FXML
-    public Button button_view;
+    public Button button_done;
 
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("setup.fxml"));
         Scene scene = new Scene(root, 300, 400);
-        stage.setTitle("Hello World");
         stage.setScene(scene);
         stage.show();
     }
@@ -35,11 +34,12 @@ public class SetupController extends Application
         Stage stage;
 
         try {
-            if (event.getSource() == button_view) {
-                root = FXMLLoader.load(getClass().getResource("game.fxml"));
-                scene = new Scene(root, 1280, 875);
+            if (event.getSource() == button_done) {
+                root = FXMLLoader.load(getClass().getResource("../analysis/analysis.fxml"));
+                scene = new Scene(root, 600, 400);
 
-                stage = (Stage) button_view.getScene().getWindow();
+                stage = (Stage) button_done.getScene().getWindow();
+                stage.setTitle("Analysis");
                 stage.setScene(scene);
                 stage.show();
 
