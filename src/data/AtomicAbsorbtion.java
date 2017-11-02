@@ -12,6 +12,8 @@ public class AtomicAbsorbtion {
 	private int airFlow;
 	private int fuelFlow;
 
+	public AtomicAbsorbtion() {
+	}
 
 	public AtomicAbsorbtion(int power, int slitWidth, int wavelength, int bgrdComp, int lampCurr, int lightKnob, int autoZeroBtn, int readBtn, int airFlow, int fuelFlow) {
 		this.power = power;
@@ -30,89 +32,89 @@ public class AtomicAbsorbtion {
 		return power;
 	}
 
-	public int setPower(int power) {
+	public AtomicAbsorbtion setPower(int power) {
 		this.power = power;
-		return power;
+		return this;
 	}
 
 	public int getSlitWidth() {
 		return slitWidth;
 	}
 
-	public int setSlitWidth(int slitWidth) {
+	public AtomicAbsorbtion setSlitWidth(int slitWidth) {
 		this.slitWidth = slitWidth;
-		return slitWidth;
+		return this;
 	}
 
 	public int getWavelength() {
 		return wavelength;
 	}
 
-	public int setWavelength(int wavelength) {
+	public AtomicAbsorbtion setWavelength(int wavelength) {
 		this.wavelength = wavelength;
-		return wavelength;
+		return this;
 	}
 
 	public int getBgrdComp() {
 		return bgrdComp;
 	}
 
-	public int setBgrdComp(int bgrdComp) {
+	public AtomicAbsorbtion setBgrdComp(int bgrdComp) {
 		this.bgrdComp = bgrdComp;
-		return bgrdComp;
+		return this;
 	}
 
 	public int getLampCurr() {
 		return lampCurr;
 	}
 
-	public int setLampCurr(int lampCurr) {
+	public AtomicAbsorbtion setLampCurr(int lampCurr) {
 		this.lampCurr = lampCurr;
-		return lampCurr;
+		return this;
 	}
 
 	public int getLightKnob() {
 		return lightKnob;
 	}
 
-	public int setLightKnob(int lightKnob) {
+	public AtomicAbsorbtion setLightKnob(int lightKnob) {
 		this.lightKnob = lightKnob;
-		return lightKnob;
+		return this;
 	}
 
 	public int getAutoZeroBtn() {
 		return autoZeroBtn;
 	}
 
-	public int setAutoZeroBtn(int autoZeroBtn) {
+	public AtomicAbsorbtion setAutoZeroBtn(int autoZeroBtn) {
 		this.autoZeroBtn = autoZeroBtn;
-		return autoZeroBtn;
+		return this;
 	}
 
 	public int getReadBtn() {
 		return readBtn;
 	}
 
-	public int setReadBtn(int readBtn) {
+	public AtomicAbsorbtion setReadBtn(int readBtn) {
 		this.readBtn = readBtn;
-		return readBtn;
+		return this;
 	}
 
 	public int getAirFlow() {
 		return airFlow;
 	}
 
-	public int setAirFlow(int airFlow) {
+	public AtomicAbsorbtion setAirFlow(int airFlow) {
 		this.airFlow = airFlow;
-		return airFlow;
+		return this;
 	}
 
 	public int getFuelFlow() {
 		return fuelFlow;
 	}
 
-	public int setFuelFlow(int fuelFlow) {
+	public AtomicAbsorbtion setFuelFlow(int fuelFlow) {
 		this.fuelFlow = fuelFlow;
-		return fuelFlow;
+		return this;
 	}
 }
