@@ -1,12 +1,12 @@
 package data;
 
-public class AASChecker {
+public class CheckInput {
     private AtomicAbsorption aa;
 
-    public AASChecker() {
+    public CheckInput() {
     }
 
-    public AASChecker(AtomicAbsorption aa) {
+    public CheckInput(AtomicAbsorption aa) {
         this.aa = aa;
     }
 
