@@ -1,6 +1,6 @@
 package data;
 
-public class AtomicAbsorbtion {
+public class AtomicAbsorption {
 	private int power;
 	private int slitWidth;
 	private int wavelength;
@@ -12,10 +12,10 @@ public class AtomicAbsorbtion {
 	private int airFlow;
 	private int fuelFlow;
 
-	public AtomicAbsorbtion() {
+	public AtomicAbsorption() {
 	}
 
-	public AtomicAbsorbtion(int power, int slitWidth, int wavelength, int bgrdComp, int lampCurr, int lightKnob, int autoZeroBtn, int readBtn, int airFlow, int fuelFlow) {
+	public AtomicAbsorption(int power, int slitWidth, int wavelength, int bgrdComp, int lampCurr, int lightKnob, int autoZeroBtn, int readBtn, int airFlow, int fuelFlow) {
 		this.power = power;
 		this.slitWidth = slitWidth;
 		this.wavelength = wavelength;
@@ -32,7 +32,7 @@ public class AtomicAbsorbtion {
 		return power;
 	}
 
-	public AtomicAbsorbtion setPower(int power) {
+	public AtomicAbsorption setPower(int power) {
 		this.power = power;
 		return this;
 	}
@@ -41,7 +41,7 @@ public class AtomicAbsorbtion {
 		return slitWidth;
 	}
 
-	public AtomicAbsorbtion setSlitWidth(int slitWidth) {
+	public AtomicAbsorption setSlitWidth(int slitWidth) {
 		this.slitWidth = slitWidth;
 		return this;
 	}
@@ -50,7 +50,7 @@ public class AtomicAbsorbtion {
 		return wavelength;
 	}
 
-	public AtomicAbsorbtion setWavelength(int wavelength) {
+	public AtomicAbsorption setWavelength(int wavelength) {
 		this.wavelength = wavelength;
 		return this;
 	}
@@ -59,7 +59,7 @@ public class AtomicAbsorbtion {
 		return bgrdComp;
 	}
 
-	public AtomicAbsorbtion setBgrdComp(int bgrdComp) {
+	public AtomicAbsorption setBgrdComp(int bgrdComp) {
 		this.bgrdComp = bgrdComp;
 		return this;
 	}
@@ -68,7 +68,7 @@ public class AtomicAbsorbtion {
 		return lampCurr;
 	}
 
-	public AtomicAbsorbtion setLampCurr(int lampCurr) {
+	public AtomicAbsorption setLampCurr(int lampCurr) {
 		this.lampCurr = lampCurr;
 		return this;
 	}
@@ -77,7 +77,7 @@ public class AtomicAbsorbtion {
 		return lightKnob;
 	}
 
-	public AtomicAbsorbtion setLightKnob(int lightKnob) {
+	public AtomicAbsorption setLightKnob(int lightKnob) {
 		this.lightKnob = lightKnob;
 		return this;
 	}
@@ -86,7 +86,7 @@ public class AtomicAbsorbtion {
 		return autoZeroBtn;
 	}
 
-	public AtomicAbsorbtion setAutoZeroBtn(int autoZeroBtn) {
+	public AtomicAbsorption setAutoZeroBtn(int autoZeroBtn) {
 		this.autoZeroBtn = autoZeroBtn;
 		return this;
 	}
@@ -95,7 +95,7 @@ public class AtomicAbsorbtion {
 		return readBtn;
 	}
 
-	public AtomicAbsorbtion setReadBtn(int readBtn) {
+	public AtomicAbsorption setReadBtn(int readBtn) {
 		this.readBtn = readBtn;
 		return this;
 	}
@@ -104,7 +104,7 @@ public class AtomicAbsorbtion {
 		return airFlow;
 	}
 
-	public AtomicAbsorbtion setAirFlow(int airFlow) {
+	public AtomicAbsorption setAirFlow(int airFlow) {
 		this.airFlow = airFlow;
 		return this;
 	}
@@ -113,7 +113,7 @@ public class AtomicAbsorbtion {
 		return fuelFlow;
 	}
 
-	public AtomicAbsorbtion setFuelFlow(int fuelFlow) {
+	public AtomicAbsorption setFuelFlow(int fuelFlow) {
 		this.fuelFlow = fuelFlow;
 		return this;
 	}
