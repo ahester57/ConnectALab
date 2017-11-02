@@ -16,6 +16,7 @@ import java.io.IOException;
 public class SetupController extends Application
 {
 
+
     @FXML
     public Button button_done;
 
@@ -35,6 +36,16 @@ public class SetupController extends Application
 
         try {
             if (event.getSource() == button_done) {
+                int power;
+                int slitWidth;
+                int wavelength;
+                int bgrdComp;
+                int lampCurr;
+                int lightKnob;
+                int autoZeroBtn;
+                int readBtn;
+                int airFlow;
+                int fuelFlow;
                 root = FXMLLoader.load(getClass().getResource("../analysis/analysis.fxml"));
                 scene = new Scene(root, 600, 400);
 
