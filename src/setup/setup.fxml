@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -27,8 +27,8 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="124.0" text="Read" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-                  <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="73.0" text="Select" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                  <Button fx:id="button_power" mnemonicParsing="false" prefHeight="35.0" prefWidth="124.0" text="Power" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                  <Button fx:id="button_read" mnemonicParsing="false" prefHeight="35.0" prefWidth="73.0" text="Read" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1" />
                   <Button prefHeight="41.0" prefWidth="124.0" text="A/Z" GridPane.columnIndex="5" />
                   <Button fx:id="button_done" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="35.0" prefWidth="72.0" text="Done" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="1" />
                </children>
@@ -37,8 +37,8 @@
          <left>
             <GridPane prefHeight="140.0" prefWidth="142.0" BorderPane.alignment="CENTER">
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="105.0" minWidth="10.0" prefWidth="99.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="65.0" minWidth="10.0" prefWidth="43.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -48,20 +48,21 @@
               </rowConstraints>
                <children>
                   <Label text="Lamp:" />
-                  <Label text="MethodName:" GridPane.rowIndex="1" />
+                  <Label text="Wavelength:" GridPane.rowIndex="1" />
                   <Label text="Lamp Type:" GridPane.rowIndex="2" />
                   <Label text="Lamp Current:" GridPane.rowIndex="3" />
-                  <TextField GridPane.columnIndex="1" />
-                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                  <TextField fx:id="text_lamp" GridPane.columnIndex="1" />
+                   <TextField fx:id="text_wavelength" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                   <TextField fx:id="text_lampcurrent" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                </children>
             </GridPane>
          </left>
           <right>
               <GridPane prefHeight="140.0" prefWidth="142.0" BorderPane.alignment="CENTER">
                   <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="112.0" minWidth="10.0" prefWidth="92.0" />
+                  <ColumnConstraints maxWidth="98.0" minWidth="30.0" prefWidth="50.0" />
                   </columnConstraints>
                   <rowConstraints>
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -70,14 +71,14 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   </rowConstraints>
                   <children>
-                      <Label text="Slit:" />
+                      <Label text="Slit Width:" />
                       <Label text="Backgrn Corr:" GridPane.rowIndex="1" />
-                      <Label text="Detector:" GridPane.rowIndex="2" />
-                      <Label text="Method Type:" GridPane.rowIndex="3" />
-                      <TextField GridPane.columnIndex="1" />
-                      <TextField GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-                      <TextField GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-                      <TextField GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                      <Label text="Air Flow:" GridPane.rowIndex="2" />
+                      <Label text="Fuel Flow:" GridPane.rowIndex="3" />
+                      <TextField fx:id="text_slitwidth" GridPane.columnIndex="1" />
+                      <TextField fx:id="text_backgroundcompensate" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                      <TextField fx:id="text_airflow" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                      <TextField fx:id="text_fuelflow" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   </children>
               </GridPane>
           </right>

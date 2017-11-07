@@ -8,6 +8,7 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
@@ -19,6 +20,9 @@ public class SetupController extends Application
 
     @FXML
     public Button button_done;
+    public Button button_read;
+    public TextField text_airflow;
+    public TextField text_fuelflow;
 
     @Override
     public void start(Stage stage) throws Exception {
