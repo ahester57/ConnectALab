@@ -20,7 +20,13 @@ public class SetupController extends Application
 
     @FXML
     public Button button_done;
+    public Button button_power;
     public Button button_read;
+    public TextField text_lampintensity;
+    public TextField text_lampcurrent;
+    public TextField text_wavelength;
+    public TextField text_slitwidth;
+    public TextField text_backgroundcorrect;
     public TextField text_airflow;
     public TextField text_fuelflow;
 

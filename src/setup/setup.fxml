@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="setup.SetupController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="setup.SetupController">
    <children>
       <BorderPane layoutX="14.0" layoutY="9.0" prefHeight="380.0" prefWidth="572.0">
          <bottom>
@@ -37,13 +37,8 @@
          <left>
             <GridPane prefHeight="261.0" prefWidth="223.0" BorderPane.alignment="CENTER">
               <columnConstraints>
-<<<<<<< HEAD
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="105.0" minWidth="10.0" prefWidth="99.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="65.0" minWidth="10.0" prefWidth="43.0" />
-=======
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="159.0" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.0" minWidth="0.0" prefWidth="123.0" />
->>>>>>> ee6c62408d8ac1d22cffce184dbeaf78e1941f5b
               </columnConstraints>
               <rowConstraints>
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -53,40 +48,24 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-<<<<<<< HEAD
-                  <Label text="Lamp:" />
-                  <Label text="Wavelength:" GridPane.rowIndex="1" />
-                  <Label text="Lamp Type:" GridPane.rowIndex="2" />
-                  <Label text="Lamp Current:" GridPane.rowIndex="3" />
-                  <TextField fx:id="text_lamp" GridPane.columnIndex="1" />
-                   <TextField fx:id="text_wavelength" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                   <TextField fx:id="text_lampcurrent" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-=======
                   <Label text="Lamp:" GridPane.rowIndex="1" />
                   <Label text="MethodName:" GridPane.rowIndex="2" />
                   <Label text="Lamp Type:" GridPane.rowIndex="3" />
                   <Label text="Lamp Current:" GridPane.rowIndex="4" />
                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
                    <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                   <TextField fx:id="text_lampintensity" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                   <TextField fx:id="text_lampcurrent" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                   <Label text="Wavelength:" />
-                   <TextField GridPane.columnIndex="1" />
->>>>>>> ee6c62408d8ac1d22cffce184dbeaf78e1941f5b
+                   <TextField fx:id="text_wavelength" GridPane.columnIndex="1" />
                </children>
             </GridPane>
          </left>
           <right>
               <GridPane prefHeight="259.0" prefWidth="229.0" BorderPane.alignment="CENTER">
                   <columnConstraints>
-<<<<<<< HEAD
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="112.0" minWidth="10.0" prefWidth="92.0" />
-                  <ColumnConstraints maxWidth="98.0" minWidth="30.0" prefWidth="50.0" />
-=======
                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="134.0" minWidth="10.0" prefWidth="134.0" />
                   <ColumnConstraints maxWidth="163.0" minWidth="132.0" prefWidth="132.0" />
->>>>>>> ee6c62408d8ac1d22cffce184dbeaf78e1941f5b
                   </columnConstraints>
                   <rowConstraints>
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -98,21 +77,14 @@
                   <children>
                       <Label text="Slit Width:" />
                       <Label text="Backgrn Corr:" GridPane.rowIndex="1" />
-<<<<<<< HEAD
-                      <Label text="Air Flow:" GridPane.rowIndex="2" />
-                      <Label text="Fuel Flow:" GridPane.rowIndex="3" />
-                      <TextField fx:id="text_slitwidth" GridPane.columnIndex="1" />
-                      <TextField fx:id="text_backgroundcompensate" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                      <TextField fx:id="text_airflow" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                      <TextField fx:id="text_fuelflow" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-=======
                       <Label text="Detector:" GridPane.rowIndex="2" />
-                      <Label text="Method Type:" GridPane.rowIndex="3" />
-                      <TextField GridPane.columnIndex="1" />
-                      <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                      <Label text="Air Flow:" GridPane.rowIndex="3" />
+                      <Label text="Fuel Flow:" GridPane.rowIndex="4" />
+                      <TextField fx:id="text_slitwidth" GridPane.columnIndex="1" />
+                      <TextField fx:id="text_backgroundcorrect" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                       <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                      <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
->>>>>>> ee6c62408d8ac1d22cffce184dbeaf78e1941f5b
+                      <TextField fx:id="text_airflow" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                      <TextField fx:id="text_fuelflow" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                   </children>
               </GridPane>
           </right>
