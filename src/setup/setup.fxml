@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="setup.SetupController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="setup.SetupController">
    <children>
       <BorderPane layoutX="14.0" layoutY="9.0" prefHeight="380.0" prefWidth="572.0">
          <bottom>
@@ -27,8 +27,8 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="124.0" text="Read" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-                  <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="73.0" text="Select" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                  <Button fx:id="button_power" mnemonicParsing="false" prefHeight="35.0" prefWidth="124.0" text="Power" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                  <Button fx:id="button_read" mnemonicParsing="false" prefHeight="35.0" prefWidth="73.0" text="Read" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1" />
                   <Button prefHeight="41.0" prefWidth="124.0" text="A/Z" GridPane.columnIndex="5" />
                   <Button fx:id="button_done" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="35.0" prefWidth="72.0" text="Done" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="1" />
                </children>
@@ -54,10 +54,10 @@
                   <Label text="Lamp Current:" GridPane.rowIndex="4" />
                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
                    <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                   <TextField fx:id="text_lampintensity" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                   <TextField fx:id="text_lampcurrent" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                   <Label text="Wavelength:" />
-                   <TextField GridPane.columnIndex="1" />
+                   <TextField fx:id="text_wavelength" GridPane.columnIndex="1" />
                </children>
             </GridPane>
          </left>
@@ -75,14 +75,16 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   </rowConstraints>
                   <children>
-                      <Label text="Slit:" />
+                      <Label text="Slit Width:" />
                       <Label text="Backgrn Corr:" GridPane.rowIndex="1" />
                       <Label text="Detector:" GridPane.rowIndex="2" />
-                      <Label text="Method Type:" GridPane.rowIndex="3" />
-                      <TextField GridPane.columnIndex="1" />
-                      <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                      <Label text="Air Flow:" GridPane.rowIndex="3" />
+                      <Label text="Fuel Flow:" GridPane.rowIndex="4" />
+                      <TextField fx:id="text_slitwidth" GridPane.columnIndex="1" />
+                      <TextField fx:id="text_backgroundcorrect" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                       <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                      <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                      <TextField fx:id="text_airflow" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                      <TextField fx:id="text_fuelflow" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                   </children>
               </GridPane>
           </right>
