@@ -7,6 +7,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -18,13 +21,17 @@ public class ASController extends Application
 
     @FXML
     public Button button_view;
+    public LineChart chart_linechart;
 
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("analysis.fxml"));
-        Scene scene = new Scene(root, 300, 400);
-        stage.setTitle("Hello World");
+
+
+        Scene scene = new Scene(chart_linechart, 600, 400);
+        stage.setTitle("Analysis");
         stage.setScene(scene);
+
         stage.show();
     }
 
@@ -36,17 +43,20 @@ public class ASController extends Application
 
         try {
             if (event.getSource() == button_view) {
-                root = FXMLLoader.load(getClass().getResource("analysis.fxml"));
-                scene = new Scene(root, 600, 400);
-
+                final NumberAxis xAxis = new NumberAxis();
+                final NumberAxis yAxis = new NumberAxis();
+                xAxis.setLabel("Wavelength (nm)");
+                chart_linechart.setTitle("Atomic Absorption Spectrometer");
+                XYChart.Series series  = new XYChart.Series();
+                series.setName("stuff");
+                series.getData().add(new XYChart.Data(1, 23));
+                series.getData().add(new XYChart.Data(100, 23));
+                chart_linechart.getData().add(series);
                 stage = (Stage) button_view.getScene().getWindow();
-                stage.setScene(scene);
-                stage.show();
-
                 centerWindow(stage);
             }
 
-        }catch (IOException e){
+        }catch (Exception e){
             e.printStackTrace();
 
         }

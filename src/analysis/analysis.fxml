@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="analysis.ASController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="analysis.ASController">
    <children>
       <BorderPane layoutX="14.0" layoutY="9.0" prefHeight="380.0" prefWidth="572.0">
          <bottom>
@@ -30,13 +30,13 @@
               </rowConstraints>
                <children>
                   <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="124.0" text="Read" GridPane.columnSpan="2" />
-                  <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="70.0"  text="Repeat" GridPane.rowIndex="1" />
-                  <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="61.0"  text="Align" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="52.0"  text="Start" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <Button mnemonicParsing="false" prefHeight="35.0"                   text="Background" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                  <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="73.0"  text="Select" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                  <Button                         prefHeight="41.0" prefWidth="124.0" text="A/Z" GridPane.columnIndex="5" />
-                  <Button fx:id="button_view" onAction="#handleButtonAction" mnemonicParsing="false" prefHeight="35.0" prefWidth="72.0"  text="View" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="70.0" text="Repeat" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="61.0" text="Align" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="52.0" text="Start" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" prefHeight="35.0" text="Background" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="73.0" text="Select" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                  <Button prefHeight="41.0" prefWidth="124.0" text="A/Z" GridPane.columnIndex="5" />
+                  <Button fx:id="button_view" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="35.0" prefWidth="72.0" text="View" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="1" />
                </children>
             </GridPane>
          </bottom>
@@ -79,9 +79,9 @@
               </GridPane>
           </right>
          <center>
-            <LineChart prefHeight="201.0" prefWidth="288.0" BorderPane.alignment="CENTER">
+            <LineChart fx:id="chart_linechart" prefHeight="201.0" prefWidth="288.0" BorderPane.alignment="CENTER">
               <xAxis>
-                <CategoryAxis side="BOTTOM" />
+                <NumberAxis side="BOTTOM" />
               </xAxis>
               <yAxis>
                 <NumberAxis side="LEFT" />
