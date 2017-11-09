@@ -1,23 +1,10 @@
 package startup;
 
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import com.sun.javafx.application.LauncherImpl;
 
-public class Main extends Application {
-
-    @Override
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("startup.fxml"));
-        primaryStage.setTitle("Connect-A-Lab");
-        primaryStage.setScene(new Scene(root, 600, 400));
-        primaryStage.show();
-    }
-
+public class Main {
 
     public static void main(String[] args) {
-        launch(args);
+        LauncherImpl.launchApplication(StartupController.class, MyPreloader.class, args);
     }
 }

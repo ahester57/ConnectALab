@@ -5,12 +5,10 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -72,11 +70,10 @@ public class SetupController extends Application
                 scene = new Scene(root, 600, 400);
 
                 stage = (Stage) button_done.getScene().getWindow();
-                stage.setTitle("Analysis");
+                stage.setTitle("Connect-A-Lab (Analysis)");
                 stage.setScene(scene);
                 stage.show();
 
-                centerWindow(stage);
             } else if(event.getSource() == button_read) {
                 System.out.println("Filling Data");
                 text_lampintensity.setText("3");
@@ -101,9 +98,9 @@ public class SetupController extends Application
                 scene = new Scene(root, 600, 400);
 
                 stage = (Stage) button_backtomenu.getScene().getWindow();
+                stage.setTitle("Connect-A-Lab");
                 stage.setScene(scene);
                 stage.show();
-                centerWindow(stage);
             }
 
         }catch (IOException e){
@@ -113,9 +110,4 @@ public class SetupController extends Application
 
     }
 
-    private void centerWindow(Stage stage) {
-        Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
-        stage.setX((screenBounds.getWidth() - stage.getWidth()) / 2);
-        stage.setY((screenBounds.getHeight() - stage.getHeight()) / 2);
-    }
 }

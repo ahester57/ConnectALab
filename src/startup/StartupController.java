@@ -10,8 +10,6 @@ import javafx.scene.chart.AreaChart;
 import javafx.scene.chart.StackedBarChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -28,9 +26,10 @@ public class StartupController extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("setup.fxml"));
-        Scene scene = new Scene(root, 300, 400);
+        Parent root = FXMLLoader.load(getClass().getResource("../startup/startup.fxml"));
+        Scene scene = new Scene(root, 600, 400);
         stage.setScene(scene);
+        stage.setTitle("Connect-A-Lab");
         stage.show();
     }
     @FXML
@@ -46,6 +45,7 @@ public class StartupController extends Application {
                 scene = new Scene(root, 600, 400);
 
                 stage = (Stage) button_begin.getScene().getWindow();
+                stage.setTitle("Connect-A-Lab (Setup)");
                 stage.setScene(scene);
                 stage.show();
 

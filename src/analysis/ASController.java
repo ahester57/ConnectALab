@@ -4,14 +4,12 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -27,12 +25,9 @@ public class ASController extends Application
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("analysis.fxml"));
-
-
-        Scene scene = new Scene(chart_linechart, 600, 400);
-        stage.setTitle("Analysis");
+        Scene scene = new Scene(root, 600, 400);
+        stage.setTitle("Connect-A-Lab (Analysis)");
         stage.setScene(scene);
-
         stage.show();
     }
 
@@ -62,7 +57,7 @@ public class ASController extends Application
                 xAxis.setLabel("Wavelength (nm)");
 
                 stage = (Stage) button_view.getScene().getWindow();
-                centerWindow(stage);
+
             } else if (event.getSource() == button_backtosetup) {
 
                 root = FXMLLoader.load(getClass().getResource("../setup/setup.fxml"));
@@ -71,7 +66,7 @@ public class ASController extends Application
                 stage = (Stage) button_backtosetup.getScene().getWindow();
                 stage.setScene(scene);
                 stage.show();
-                centerWindow(stage);
+
             }
 
         }catch (Exception e){
@@ -81,9 +76,4 @@ public class ASController extends Application
 
     }
 
-    private void centerWindow(Stage stage) {
-        Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
-        stage.setX((screenBounds.getWidth() - stage.getWidth()) / 2);
-        stage.setY((screenBounds.getHeight() - stage.getHeight()) / 2);
-    }
 }
