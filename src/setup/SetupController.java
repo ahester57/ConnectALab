@@ -20,7 +20,6 @@ public class SetupController extends Application
 
     @FXML
     public Button button_done;
-    public Button button_power;
     public Button button_read;
     public TextField text_lampintensity;
     public TextField text_lampcurrent;
@@ -47,15 +46,19 @@ public class SetupController extends Application
         try {
             if (event.getSource() == button_done) {
                 int power;
-                int slitWidth = Integer.parseInt(text_slitwidth.getText());
-                int wavelength = Integer.parseInt(text_wavelength.getText());
-                int bgrdComp = Integer.parseInt(text_backgroundcorrect.getText());
-                int lampCurr = Integer.parseInt(text_lampcurrent.getText());
-                int lightKnob = Integer.parseInt(text_lampintensity.getText());
-                int autoZeroBtn;
-                int readBtn;
-                int airFlow = Integer.parseInt(text_airflow.getText());
-                int fuelFlow = Integer.parseInt(text_fuelflow.getText());
+                try {
+                    int slitWidth = Integer.parseInt(text_slitwidth.getText());
+                    int wavelength = Integer.parseInt(text_wavelength.getText());
+                    int bgrdComp = Integer.parseInt(text_backgroundcorrect.getText());
+                    int lampCurr = Integer.parseInt(text_lampcurrent.getText());
+                    int lightKnob = Integer.parseInt(text_lampintensity.getText());
+                    int autoZeroBtn;
+                    int readBtn;
+                    int airFlow = Integer.parseInt(text_airflow.getText());
+                    int fuelFlow = Integer.parseInt(text_fuelflow.getText());
+                } catch (NumberFormatException nfe) {
+                    nfe.printStackTrace();
+                }
                 root = FXMLLoader.load(getClass().getResource("../analysis/analysis.fxml"));
                 scene = new Scene(root, 600, 400);
 
@@ -65,8 +68,6 @@ public class SetupController extends Application
                 stage.show();
 
                 centerWindow(stage);
-            } else if(event.getSource() == button_power) {
-
             } else if(event.getSource() == button_read) {
 
             }
