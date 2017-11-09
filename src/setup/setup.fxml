@@ -8,8 +8,9 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="setup.SetupController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="setup.SetupController">
    <children>
       <BorderPane layoutX="14.0" layoutY="9.0" prefHeight="380.0" prefWidth="572.0">
          <bottom>
@@ -27,9 +28,9 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="button_read" mnemonicParsing="false" prefHeight="35.0" prefWidth="73.0" text="Read" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                  <Button prefHeight="41.0" prefWidth="124.0" text="A/Z" GridPane.columnIndex="5" />
-                  <Button fx:id="button_done" onAction="#handleButtonAction" mnemonicParsing="false"  prefHeight="35.0" prefWidth="72.0" text="Done" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                  <Button fx:id="button_read" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="35.0" prefWidth="73.0" text="Read" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                  <Button fx:id="button_clear" onAction="#handleButtonAction" prefHeight="41.0" prefWidth="124.0" text="Clear Input" GridPane.columnIndex="5" />
+                  <Button fx:id="button_done" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="35.0" prefWidth="72.0" text="Done" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="1" />
                </children>
             </GridPane>
          </bottom>
@@ -88,7 +89,7 @@
               </GridPane>
           </right>
          <top>
-            <GridPane prefHeight="60.0" prefWidth="527.0" BorderPane.alignment="CENTER">
+            <GridPane prefHeight="44.0" prefWidth="572.0" BorderPane.alignment="CENTER">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="502.0" minWidth="10.0" prefWidth="124.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="486.0" minWidth="10.0" prefWidth="317.0" />
@@ -98,7 +99,15 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="Setup" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                  <Label text="Setup" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                     <font>
+                        <Font name="Cambria Math" size="32.0" />
+                     </font></Label>
+                  <Button fx:id="button_backtomenu" mnemonicParsing="false" onAction="#handleButtonAction" text="Back to Menu">
+                     <font>
+                        <Font name="Cambria Math" size="14.0" />
+                     </font>
+                  </Button>
                </children>
             </GridPane>
          </top>

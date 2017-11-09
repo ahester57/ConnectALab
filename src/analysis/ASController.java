@@ -22,6 +22,7 @@ public class ASController extends Application
     @FXML
     public Button button_view;
     public LineChart chart_linechart;
+    public Button button_backtosetup;
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -43,16 +44,33 @@ public class ASController extends Application
 
         try {
             if (event.getSource() == button_view) {
-                final NumberAxis xAxis = new NumberAxis();
                 final NumberAxis yAxis = new NumberAxis();
-                xAxis.setLabel("Wavelength (nm)");
-                chart_linechart.setTitle("Atomic Absorption Spectrometer");
+                //chart_linechart.setTitle("Atomic Absorption Spectrometer");
                 XYChart.Series series  = new XYChart.Series();
                 series.setName("stuff");
-                series.getData().add(new XYChart.Data(1, 23));
-                series.getData().add(new XYChart.Data(100, 23));
+                series.getData().add(new XYChart.Data(200, 2));
+                series.getData().add(new XYChart.Data(233, 3));
+                series.getData().add(new XYChart.Data(238, 40));
+                series.getData().add(new XYChart.Data(243, 3));
+                series.getData().add(new XYChart.Data(800, 2));
                 chart_linechart.getData().add(series);
+                NumberAxis xAxis = (NumberAxis) chart_linechart.getXAxis();
+                xAxis.setAutoRanging(false);
+                xAxis.setLowerBound(200);
+                xAxis.setUpperBound(800);
+
+                xAxis.setLabel("Wavelength (nm)");
+
                 stage = (Stage) button_view.getScene().getWindow();
+                centerWindow(stage);
+            } else if (event.getSource() == button_backtosetup) {
+
+                root = FXMLLoader.load(getClass().getResource("../setup/setup.fxml"));
+                scene = new Scene(root, 600, 400);
+
+                stage = (Stage) button_backtosetup.getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
                 centerWindow(stage);
             }
 

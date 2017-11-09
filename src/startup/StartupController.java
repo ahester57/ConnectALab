@@ -6,6 +6,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.AreaChart;
+import javafx.scene.chart.StackedBarChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -18,6 +21,8 @@ public class StartupController extends Application {
     @FXML
     public Button button_begin;
     public Button button_power;
+    public AreaChart chart_rightchart;
+    public StackedBarChart chart_leftchart;
 
     private boolean isOn = false;
 
@@ -49,6 +54,16 @@ public class StartupController extends Application {
                     button_begin.setDisable(false);
                     button_power.setStyle("-fx-background-color: #00ff42;");
                     isOn = true;
+                    XYChart.Series series  = new XYChart.Series<String, Integer>();
+                    series.getData().add(new XYChart.Data("hello", 20));
+                    series.getData().add(new XYChart.Data("world", 40));
+                    chart_leftchart.getData().add(series);
+                    chart_leftchart.setLegendVisible(false);
+                    XYChart.Series series2  = new XYChart.Series<String, Integer>();
+                    series2.getData().add(new XYChart.Data("5", 20));
+                    series2.getData().add(new XYChart.Data("15", 40));
+                    chart_rightchart.getData().add(series2);
+                    chart_rightchart.setLegendVisible(false);
                 } else {
                     button_begin.setDisable(true);
                     button_power.setStyle("-fx-background-color: #d3d3d3;");

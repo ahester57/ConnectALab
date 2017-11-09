@@ -1,5 +1,6 @@
 package setup;
 
+import data.AtomicAbsorption;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,6 +22,8 @@ public class SetupController extends Application
     @FXML
     public Button button_done;
     public Button button_read;
+    public Button button_clear;
+    public Button button_backtomenu;
     public TextField text_lampintensity;
     public TextField text_lampcurrent;
     public TextField text_wavelength;
@@ -28,6 +31,8 @@ public class SetupController extends Application
     public TextField text_backgroundcorrect;
     public TextField text_airflow;
     public TextField text_fuelflow;
+
+
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -56,9 +61,13 @@ public class SetupController extends Application
                     int readBtn;
                     int airFlow = Integer.parseInt(text_airflow.getText());
                     int fuelFlow = Integer.parseInt(text_fuelflow.getText());
+                    AtomicAbsorption aas = new AtomicAbsorption(1, slitWidth, wavelength, bgrdComp, lampCurr,
+                                                        lightKnob, 1, 1, airFlow, fuelFlow);
                 } catch (NumberFormatException nfe) {
-                    nfe.printStackTrace();
+                    System.out.println("Please enter data.");
+                    return;
                 }
+
                 root = FXMLLoader.load(getClass().getResource("../analysis/analysis.fxml"));
                 scene = new Scene(root, 600, 400);
 
@@ -69,7 +78,32 @@ public class SetupController extends Application
 
                 centerWindow(stage);
             } else if(event.getSource() == button_read) {
+                System.out.println("Filling Data");
+                text_lampintensity.setText("3");
+                text_lampcurrent.setText("3");
+                text_wavelength.setText("3");
+                text_slitwidth.setText("3");
+                text_backgroundcorrect.setText("3");
+                text_airflow.setText("3");
+                text_fuelflow.setText("3");
+            } else if(event.getSource() == button_clear) {
+                System.out.println("Clearing Data");
+                text_lampintensity.setText("");
+                text_lampcurrent.setText("");
+                text_wavelength.setText("");
+                text_slitwidth.setText("");
+                text_backgroundcorrect.setText("");
+                text_airflow.setText("");
+                text_fuelflow.setText("");
+            } else if (event.getSource() == button_backtomenu) {
 
+                root = FXMLLoader.load(getClass().getResource("../startup/startup.fxml"));
+                scene = new Scene(root, 600, 400);
+
+                stage = (Stage) button_backtomenu.getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+                centerWindow(stage);
             }
 
         }catch (IOException e){

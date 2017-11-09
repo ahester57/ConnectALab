@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
@@ -10,19 +9,20 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="analysis.ASController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="analysis.ASController">
    <children>
       <BorderPane layoutX="14.0" layoutY="9.0" prefHeight="380.0" prefWidth="572.0">
          <bottom>
-            <GridPane prefHeight="89.0" prefWidth="550.0" BorderPane.alignment="CENTER">
+            <GridPane prefHeight="70.0" prefWidth="572.0" BorderPane.alignment="CENTER">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="82.0" minWidth="10.0" prefWidth="76.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="67.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="123.0" minWidth="10.0" prefWidth="59.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="163.0" minWidth="10.0" prefWidth="106.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="116.0" minWidth="10.0" prefWidth="74.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="116.0" minWidth="0.0" prefWidth="70.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="60.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="123.0" minWidth="10.0" prefWidth="63.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="240.0" minWidth="10.0" prefWidth="163.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="116.0" minWidth="10.0" prefWidth="82.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="116.0" minWidth="0.0" prefWidth="108.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -36,12 +36,16 @@
                   <Button mnemonicParsing="false" prefHeight="35.0" text="Background" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                   <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="73.0" text="Select" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1" />
                   <Button prefHeight="41.0" prefWidth="124.0" text="A/Z" GridPane.columnIndex="5" />
-                  <Button fx:id="button_view" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="35.0" prefWidth="72.0" text="View" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                  <Button fx:id="button_view" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="35.0" prefWidth="120.0" text="View Chart" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.vgrow="SOMETIMES">
+                     <font>
+                        <Font name="Cambria Math" size="18.0" />
+                     </font></Button>
+                  <Label prefHeight="17.0" prefWidth="150.0" text="We'll put a custom legend here" GridPane.columnIndex="3" />
                </children>
             </GridPane>
          </bottom>
          <left>
-            <GridPane prefHeight="140.0" prefWidth="142.0" BorderPane.alignment="CENTER">
+            <GridPane prefHeight="261.0" prefWidth="134.0" BorderPane.alignment="CENTER">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
@@ -60,7 +64,7 @@
             </GridPane>
          </left>
           <right>
-              <GridPane prefHeight="140.0" prefWidth="142.0" BorderPane.alignment="CENTER">
+              <GridPane prefHeight="261.0" prefWidth="131.0" BorderPane.alignment="CENTER">
                   <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   </columnConstraints>
@@ -91,20 +95,25 @@
          <top>
             <GridPane BorderPane.alignment="CENTER">
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="280.0" minWidth="10.0" prefWidth="219.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="353.0" minWidth="10.0" prefWidth="253.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="353.0" minWidth="10.0" prefWidth="218.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="353.0" minWidth="10.0" prefWidth="74.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="513.0" minWidth="10.0" prefWidth="498.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                      <center>
-                        <Label text="Wavelength:" BorderPane.alignment="CENTER" />
+                        <Label prefHeight="18.0" prefWidth="379.0" text="Atomic Absorption Spectrometer" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font name="Cambria Math" size="25.0" />
+                           </font></Label>
                      </center>
                   </BorderPane>
+                  <Button fx:id="button_backtosetup" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="72.0" text="Go Back">
+                     <font>
+                        <Font name="Cambria Math" size="14.0" />
+                     </font></Button>
                </children>
             </GridPane>
          </top>
