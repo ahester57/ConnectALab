@@ -54,7 +54,8 @@ public class ASController extends Application
                 xAxis.setLowerBound(200);
                 xAxis.setUpperBound(800);
 
-                xAxis.setLabel("Wavelength (nm)");
+                xAxis.setLabel("Time (ms)");
+                yAxis.setLabel("Concentration");
 
                 stage = (Stage) button_view.getScene().getWindow();
 

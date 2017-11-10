@@ -1,6 +1,7 @@
 package setup;
 
 import data.AtomicAbsorption;
+import data.CheckInput;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,7 +23,7 @@ public class SetupController extends Application
     public Button button_read;
     public Button button_clear;
     public Button button_backtomenu;
-    public TextField text_lampintensity;
+    public TextField text_lightintensity;
     public TextField text_lampcurrent;
     public TextField text_wavelength;
     public TextField text_slitwidth;
@@ -48,22 +49,29 @@ public class SetupController extends Application
 
         try {
             if (event.getSource() == button_done) {
-                int power;
+                AtomicAbsorption aas;
                 try {
+                    int power = 5;
                     int slitWidth = Integer.parseInt(text_slitwidth.getText());
                     int wavelength = Integer.parseInt(text_wavelength.getText());
                     int bgrdComp = Integer.parseInt(text_backgroundcorrect.getText());
                     int lampCurr = Integer.parseInt(text_lampcurrent.getText());
-                    int lightKnob = Integer.parseInt(text_lampintensity.getText());
-                    int autoZeroBtn;
-                    int readBtn;
+                    int lightKnob = Integer.parseInt(text_lightintensity.getText());
+                    int autoZeroBtn = 5;
+                    int readBtn = 5;
                     int airFlow = Integer.parseInt(text_airflow.getText());
                     int fuelFlow = Integer.parseInt(text_fuelflow.getText());
-                    AtomicAbsorption aas = new AtomicAbsorption(1, slitWidth, wavelength, bgrdComp, lampCurr,
-                                                        lightKnob, 1, 1, airFlow, fuelFlow);
+                    aas = new AtomicAbsorption(power, slitWidth, wavelength, bgrdComp, lampCurr,
+                                                        lightKnob, autoZeroBtn, readBtn, airFlow, fuelFlow);
                 } catch (NumberFormatException nfe) {
                     System.out.println("Please enter data.");
                     return;
+                }
+
+                CheckInput verify = new CheckInput(aas);
+
+                if (verify.checkAll() == 0) {
+                    System.out.println("Bad input.");
                 }
 
                 root = FXMLLoader.load(getClass().getResource("../analysis/analysis.fxml"));
@@ -74,24 +82,26 @@ public class SetupController extends Application
                 stage.setScene(scene);
                 stage.show();
 
-            } else if(event.getSource() == button_read) {
+            } else if (event.getSource() == button_read) {
                 System.out.println("Filling Data");
-                text_lampintensity.setText("3");
+                text_lightintensity.setText("2");
                 text_lampcurrent.setText("3");
-                text_wavelength.setText("3");
+                text_wavelength.setText("4");
                 text_slitwidth.setText("3");
-                text_backgroundcorrect.setText("3");
-                text_airflow.setText("3");
+                text_backgroundcorrect.setText("1");
+                text_airflow.setText("1");
                 text_fuelflow.setText("3");
-            } else if(event.getSource() == button_clear) {
+
+            } else if (event.getSource() == button_clear) {
                 System.out.println("Clearing Data");
-                text_lampintensity.setText("");
+                text_lightintensity.setText("");
                 text_lampcurrent.setText("");
                 text_wavelength.setText("");
                 text_slitwidth.setText("");
                 text_backgroundcorrect.setText("");
                 text_airflow.setText("");
                 text_fuelflow.setText("");
+
             } else if (event.getSource() == button_backtomenu) {
 
                 root = FXMLLoader.load(getClass().getResource("../startup/startup.fxml"));
@@ -103,7 +113,7 @@ public class SetupController extends Application
                 stage.show();
             }
 
-        }catch (IOException e){
+        } catch (IOException e){
             e.printStackTrace();
 
         }
