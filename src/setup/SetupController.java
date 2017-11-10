@@ -30,6 +30,9 @@ public class SetupController extends Application
     public TextField text_backgroundcorrect;
     public TextField text_airflow;
     public TextField text_fuelflow;
+    public TextField text_libraryname;
+    public TextField text_methodtype;
+    public TextField text_backpressure;
 
 
 
@@ -91,6 +94,9 @@ public class SetupController extends Application
                 text_backgroundcorrect.setText("1");
                 text_airflow.setText("1");
                 text_fuelflow.setText("3");
+                text_libraryname.setText("Pb in Soil");
+                text_methodtype.setText("Air/Acetelyne");
+                text_backpressure.setText("Default");
 
             } else if (event.getSource() == button_clear) {
                 System.out.println("Clearing Data");
@@ -101,6 +107,9 @@ public class SetupController extends Application
                 text_backgroundcorrect.setText("");
                 text_airflow.setText("");
                 text_fuelflow.setText("");
+                text_libraryname.setText("");
+                text_methodtype.setText("");
+                text_backpressure.setText("");
 
             } else if (event.getSource() == button_backtomenu) {
 

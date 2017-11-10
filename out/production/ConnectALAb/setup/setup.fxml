@@ -45,12 +45,12 @@
                   <Label text="Wavelength:" GridPane.rowIndex="2" />
                   <Label text="Light Intensity:" GridPane.rowIndex="3" />
                   <Label text="Lamp Current:" GridPane.rowIndex="4" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="text_methodtype" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                    <TextField fx:id="text_wavelength" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                    <TextField fx:id="text_lightintensity" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                    <TextField fx:id="text_lampcurrent" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                   <Label text="Library Name:" />
-                   <TextField GridPane.columnIndex="1" />
+                   <TextField fx:id="text_libraryname" GridPane.columnIndex="1" />
                </children>
             </GridPane>
          </left>
@@ -75,7 +75,7 @@
                       <Label text="Fuel Flow:" GridPane.rowIndex="4" />
                       <TextField fx:id="text_slitwidth" GridPane.columnIndex="1" />
                       <TextField fx:id="text_backgroundcorrect" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                      <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                      <TextField fx:id="text_backpressure" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                       <TextField fx:id="text_airflow" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                       <TextField fx:id="text_fuelflow" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                   </children>

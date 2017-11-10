@@ -55,7 +55,7 @@ public class ASController extends Application
                 xAxis.setUpperBound(800);
 
                 xAxis.setLabel("Time (ms)");
-                yAxis.setLabel("Concentration");
+                yAxis.setLabel("Concentration (mg/L)");
 
                 stage = (Stage) button_view.getScene().getWindow();
 
