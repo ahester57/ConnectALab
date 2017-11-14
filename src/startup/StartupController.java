@@ -1,6 +1,7 @@
 package startup;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,6 +22,7 @@ public class StartupController extends Application {
     public Button button_power;
     public AreaChart chart_rightchart;
     public StackedBarChart chart_leftchart;
+    public Button button_quit;
 
     private boolean isOn = false;
 
@@ -73,6 +75,9 @@ public class StartupController extends Application {
                     chart_rightchart.getData().clear();
                     chart_rightchart.setLegendVisible(false);
                 }
+            } else if (event.getSource() == button_quit) {
+                Platform.exit();
+                System.exit(0);
             }
 
         }catch (IOException e){
