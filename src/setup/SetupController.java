@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import scenes.AtomicAbScene;
 
 public class SetupController extends Application
 {
@@ -78,7 +79,7 @@ public class SetupController extends Application
                 }
 
                 root = FXMLLoader.load(getClass().getResource("../analysis/analysis.fxml"));
-                scene = new Scene(root, 1000, 600);
+                scene = new AtomicAbScene(root, 1000, 600, aas);
 
                 stage = (Stage) button_done.getScene().getWindow();
                 stage.setTitle("Connect-A-Lab (Analysis)");

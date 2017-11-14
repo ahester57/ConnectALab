@@ -28,6 +28,12 @@ public class AtomicAbsorption {
 		this.fuelFlow = fuelFlow;
 	}
 
+	@Override
+	public String toString() {
+		return String.format("Power:%d, SlitWidth:%d, WaveLength:%d, BackgroundComp:%d, lampCurr:%d, LightKnob:%d, autoZeroBtn:%d, readBtn:%d, airFlow:%d, fuelFlow:%d"
+		                    , power, slitWidth, wavelength, bgrdComp, lampCurr, lightKnob, autoZeroBtn, readBtn, airFlow, fuelFlow);
+	}
+
 	public int getPower() {
 		return power;
 	}

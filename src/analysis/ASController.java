@@ -1,5 +1,6 @@
 package analysis;
 
+import data.AtomicAbsorption;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,11 +13,13 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import scenes.AtomicAbScene;
 
 import java.io.IOException;
 
 public class ASController extends Application
 {
+    private AtomicAbsorption aaData;
 
     @FXML
     public Button button_view;
@@ -37,6 +40,10 @@ public class ASController extends Application
         Parent root;
         Scene scene;
         Stage stage;
+
+        AtomicAbScene abScene = (AtomicAbScene) button_view.getScene();
+        aaData = abScene.getAAData();
+        System.out.println( aaData );
 
         try {
             if (event.getSource() == button_view) {
