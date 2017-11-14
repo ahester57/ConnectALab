@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.*?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.StackedBarChart?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="startup.StartupController">
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="startup.StartupController">
     <children>
         <BorderPane layoutX="14.0" layoutY="9.0" prefHeight="380.0" prefWidth="572.0">
             <left>
@@ -78,6 +86,7 @@
                     <children>
                         <Button fx:id="button_power" defaultButton="true" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="35.0" prefWidth="208.0" text="Power" textFill="#a10303" GridPane.columnSpan="2" />
                         <Button fx:id="button_begin" disable="true" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="232.0" text="Begin" textAlignment="CENTER" GridPane.rowIndex="1" />
+                        <Button fx:id="button_quit" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="26.0" prefWidth="169.0" text="Quit" GridPane.rowIndex="2" />
                     </children>
                 </GridPane>
             </center>
