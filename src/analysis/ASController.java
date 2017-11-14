@@ -66,6 +66,7 @@ public class ASController extends Application
                 scene = new Scene(root, 600, 400);
 
                 stage = (Stage) button_backtosetup.getScene().getWindow();
+                stage.setTitle("Connect-A-Lab (Setup)");
                 stage.setScene(scene);
                 stage.show();
 
