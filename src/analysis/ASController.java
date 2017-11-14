@@ -25,7 +25,7 @@ public class ASController extends Application
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("analysis.fxml"));
-        Scene scene = new Scene(root, 600, 400);
+        Scene scene = new Scene(root, 1000, 600);
         stage.setTitle("Connect-A-Lab (Analysis)");
         stage.setScene(scene);
         stage.show();

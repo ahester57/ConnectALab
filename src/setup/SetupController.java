@@ -78,7 +78,7 @@ public class SetupController extends Application
                 }
 
                 root = FXMLLoader.load(getClass().getResource("../analysis/analysis.fxml"));
-                scene = new Scene(root, 600, 400);
+                scene = new Scene(root, 1000, 600);
 
                 stage = (Stage) button_done.getScene().getWindow();
                 stage.setTitle("Connect-A-Lab (Analysis)");

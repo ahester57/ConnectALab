@@ -55,8 +55,8 @@ public class StartupController extends Application {
                     button_power.setStyle("-fx-background-color: #00ff42;");
                     isOn = true;
                     XYChart.Series series  = new XYChart.Series<String, Integer>();
-                    series.getData().add(new XYChart.Data("hello", 20));
-                    series.getData().add(new XYChart.Data("world", 40));
+                    series.getData().add(new XYChart.Data("12", 20));
+                    series.getData().add(new XYChart.Data("16", 40));
                     chart_leftchart.getData().add(series);
                     chart_leftchart.setLegendVisible(false);
                     XYChart.Series series2  = new XYChart.Series<String, Integer>();
@@ -68,6 +68,10 @@ public class StartupController extends Application {
                     button_begin.setDisable(true);
                     button_power.setStyle("-fx-background-color: #d3d3d3;");
                     isOn = false;
+                    chart_leftchart.getData().clear();
+                    chart_leftchart.setLegendVisible(false);
+                    chart_rightchart.getData().clear();
+                    chart_rightchart.setLegendVisible(false);
                 }
             }
 
