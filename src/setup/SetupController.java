@@ -74,12 +74,14 @@ public class SetupController extends Application
 
                 CheckInput verify = new CheckInput(aas);
 
-                if (verify.checkAll() == 0) {
+                int validity = verify.checkAll();
+
+                if (validity == 0) {
                     System.out.println("Bad input.");
                 }
 
                 root = FXMLLoader.load(getClass().getResource("../analysis/analysis.fxml"));
-                scene = new AtomicAbScene(root, 1000, 600, aas);
+                scene = new AtomicAbScene(root, 1000, 600, aas, validity);
 
                 stage = (Stage) button_done.getScene().getWindow();
                 stage.setTitle("Connect-A-Lab (Analysis)");

@@ -20,6 +20,8 @@ import java.io.IOException;
 public class ASController extends Application
 {
     private AtomicAbsorption aaData;
+    private int aaValidity;
+
 
     @FXML
     public Button button_view;
@@ -43,29 +45,51 @@ public class ASController extends Application
 
         AtomicAbScene abScene = (AtomicAbScene) button_view.getScene();
         aaData = abScene.getAAData();
+        aaValidity = abScene.getAAValidity();
         System.out.println( aaData );
+        System.out.println( aaValidity );
 
         try {
             if (event.getSource() == button_view) {
+                //Clear chart
                 chart_linechart.getData().clear();
-                //chart_linechart.setTitle("Atomic Absorption Spectrometer");
+
+                //Create new series
                 XYChart.Series<Number, Number> series  = new XYChart.Series<>();
-                series.setName("stuff");
-                series.getData().add(new XYChart.Data<>(200, 2));
-                series.getData().add(new XYChart.Data<>(233, 3));
-                series.getData().add(new XYChart.Data<>(238, 40));
-                series.getData().add(new XYChart.Data<>(243, 3));
-                series.getData().add(new XYChart.Data<>(800, 2));
-                chart_linechart.getData().add(series);
+                series.setName("Chemical Concentration");
+
+                //X-axis setup
                 NumberAxis xAxis = (NumberAxis) chart_linechart.getXAxis();
-                NumberAxis yAxis = (NumberAxis) chart_linechart.getYAxis();
                 xAxis.setAutoRanging(false);
                 xAxis.setLowerBound(200);
                 xAxis.setUpperBound(800);
                 xAxis.setLabel("Time (ms)");
+
+                //Y-axis setup
+                NumberAxis yAxis = (NumberAxis) chart_linechart.getYAxis();
+                yAxis.setAutoRanging(false);
+                yAxis.setLowerBound(0);
+                yAxis.setUpperBound(50);
                 yAxis.setLabel("Concentration (mg/L)");
 
-                stage = (Stage) button_view.getScene().getWindow();
+                //Set data points
+                if (aaValidity == 1) {
+                    series.getData().add(new XYChart.Data<>(200, 2));
+                    series.getData().add(new XYChart.Data<>(233, 3));
+                    series.getData().add(new XYChart.Data<>(238, 40));
+                    series.getData().add(new XYChart.Data<>(243, 3));
+                    series.getData().add(new XYChart.Data<>(800, 2));
+
+                } else if (aaValidity == 0) {
+                    series.getData().add(new XYChart.Data<>(200, 2));
+                    series.getData().add(new XYChart.Data<>(233, 3));
+                    series.getData().add(new XYChart.Data<>(238, 3));
+                    series.getData().add(new XYChart.Data<>(243, 3));
+                    series.getData().add(new XYChart.Data<>(800, 2));
+                }
+
+                //Draw graph
+                chart_linechart.getData().add(series);
 
             } else if (event.getSource() == button_backtosetup) {
 
