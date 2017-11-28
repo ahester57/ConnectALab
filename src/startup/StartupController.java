@@ -44,7 +44,7 @@ public class StartupController extends Application {
             if (event.getSource() == button_begin) {
 
                 root = FXMLLoader.load(getClass().getResource("../setup/setup.fxml"));
-                scene = new Scene(root, 600, 400);
+                scene = new Scene(root, 1000, 600);
 
                 stage = (Stage) button_begin.getScene().getWindow();
                 stage.setTitle("Connect-A-Lab (Setup)");

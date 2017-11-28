@@ -40,7 +40,7 @@ public class SetupController extends Application
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("setup.fxml"));
-        Scene scene = new Scene(root, 300, 400);
+        Scene scene = new Scene(root, 1000, 600);
         stage.setScene(scene);
         stage.show();
     }
