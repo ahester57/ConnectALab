@@ -9,7 +9,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -34,7 +36,13 @@ public class SetupController extends Application
     public TextField text_libraryname;
     public TextField text_methodtype;
     public TextField text_backpressure;
-
+    public Slider wavelength_slider;
+    public Slider light_intensity_slider;
+    public Slider lamp_current_slider;
+    public Slider slit_width_slider;
+    public Slider background_correction_slider;
+    public Slider air_flow_slider;
+    public Slider fuel_flow_slider;
 
 
     @Override
@@ -132,4 +140,38 @@ public class SetupController extends Application
 
     }
 
+    @FXML
+    void clicked(MouseEvent event){
+        text_wavelength.setText(Integer.toString((int)wavelength_slider.getValue()));
+    }
+
+    @FXML
+    void lightIntensityClicked(MouseEvent event) {
+        text_lightintensity.setText(Integer.toString((int)light_intensity_slider.getValue()));
+    }
+
+    @FXML
+    void lampCurrentClicked(MouseEvent event){
+        text_lampcurrent.setText(Integer.toString((int)lamp_current_slider.getValue()));
+    }
+
+    @FXML
+    void slitWidthClicked(MouseEvent event){
+        text_slitwidth.setText(Integer.toString((int)slit_width_slider.getValue()));
+    }
+
+    @FXML
+    void backgroundCorrectionClicked(MouseEvent event) {
+        text_backgroundcorrect.setText(Integer.toString((int)background_correction_slider.getValue()));
+    }
+
+    @FXML
+    void airFlowClicked(MouseEvent event) {
+        text_airflow.setText(Integer.toString((int)air_flow_slider.getValue()));
+    }
+
+    @FXML
+    void fuelFlowClicked(MouseEvent event) {
+        text_fuelflow.setText(Integer.toString((int)fuel_flow_slider.getValue()));
+    }
 }
