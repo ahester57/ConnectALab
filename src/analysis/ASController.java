@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 import scenes.AtomicAbScene;
 
 import java.io.IOException;
+import java.util.Random;
 
 public class ASController extends Application
 {
@@ -61,31 +62,42 @@ public class ASController extends Application
                 //X-axis setup
                 NumberAxis xAxis = (NumberAxis) chart_linechart.getXAxis();
                 xAxis.setAutoRanging(false);
-                xAxis.setLowerBound(200);
-                xAxis.setUpperBound(800);
-                xAxis.setLabel("Time (ms)");
+                xAxis.setLowerBound(0);
+                xAxis.setUpperBound(150);
+                xAxis.setLabel("Time (s)");
 
                 //Y-axis setup
                 NumberAxis yAxis = (NumberAxis) chart_linechart.getYAxis();
                 yAxis.setAutoRanging(false);
                 yAxis.setLowerBound(0);
                 yAxis.setUpperBound(50);
-                yAxis.setLabel("Concentration (mg/L)");
+                yAxis.setLabel("Concentration (ppm)");
 
                 //Set data points
                 if (aaValidity == 1) {
-                    series.getData().add(new XYChart.Data<>(200, 2));
-                    series.getData().add(new XYChart.Data<>(233, 3));
-                    series.getData().add(new XYChart.Data<>(238, 40));
-                    series.getData().add(new XYChart.Data<>(243, 3));
-                    series.getData().add(new XYChart.Data<>(800, 2));
+                    Random rand = new Random();
+                    for (int i = 0; i < 17; i++) {
+                        int y = rand.nextInt() % 5 + 10;
+                        series.getData().add(new XYChart.Data<>(i*5, y));
+                    }
+                    series.getData().add(new XYChart.Data<>(17*5, 17));
+                    series.getData().add(new XYChart.Data<>(18*5, 21));
+                    series.getData().add(new XYChart.Data<>(19*5, 40));
+                    series.getData().add(new XYChart.Data<>(20*5, 39));
+                    series.getData().add(new XYChart.Data<>(21*5, 36));
+                    series.getData().add(new XYChart.Data<>(22*5, 21));
+
+                    for (int i = 23; i < 30; i++) {
+                        int y = rand.nextInt() % 5 + 10;
+                        series.getData().add(new XYChart.Data<>(i*5, y));
+                    }
 
                 } else if (aaValidity == 0) {
-                    series.getData().add(new XYChart.Data<>(200, 2));
-                    series.getData().add(new XYChart.Data<>(233, 3));
-                    series.getData().add(new XYChart.Data<>(238, 3));
-                    series.getData().add(new XYChart.Data<>(243, 3));
-                    series.getData().add(new XYChart.Data<>(800, 2));
+                    Random rand = new Random();
+                    for (int i = 0; i < 30; i++) {
+                        int y = rand.nextInt() % 5 + 10;
+                        series.getData().add(new XYChart.Data<>(i*5, y));
+                    }
                 }
 
                 //Draw graph
