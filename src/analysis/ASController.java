@@ -73,14 +73,18 @@ public class ASController extends Application
                 yAxis.setUpperBound(50);
                 yAxis.setLabel("Concentration (ppm)");
 
+                int ppm = 40;
                 //Set data points
                 if (aaValidity == 1) {
-                    series = getFortySeries();
-
+                    if (ppm == 40) {
+                        series = getFortySeries();
+                    } else if (ppm == 10) {
+                        series = getTenSeries();
+                    }
                 } else if (aaValidity == 0) {
                     Random rand = new Random();
                     for (int i = 0; i < 30; i++) {
-                        int y = rand.nextInt() % 5 + 10;
+                        int y = rand.nextInt() % 3 + 2;
                         series.getData().add(new XYChart.Data<>(i*5, y));
                     }
                 }
@@ -91,7 +95,7 @@ public class ASController extends Application
             } else if (event.getSource() == button_backtosetup) {
 
                 root = FXMLLoader.load(getClass().getResource("../setup/setup.fxml"));
-                scene = new Scene(root, 600, 400);
+                scene = new Scene(root, 1000, 600);
 
                 stage = (Stage) button_backtosetup.getScene().getWindow();
                 stage.setTitle("Connect-A-Lab (Setup)");
@@ -107,7 +111,7 @@ public class ASController extends Application
 
     }
 
-    private XYChart.Series getFortySeries() {
+    private XYChart.Series<Number, Number> getFortySeries() {
         //Create new series
         XYChart.Series<Number, Number> series = new XYChart.Series<>();
         series.setName("Chemical Concentration");
@@ -125,6 +129,30 @@ public class ASController extends Application
 
         for (int i = 23; i < 30; i++) {
             int y = rand.nextInt() % 5 + 10;
+            series.getData().add(new XYChart.Data<>(i*5, y));
+        }
+        return series;
+    }
+
+    private XYChart.Series<Number, Number> getTenSeries() {
+        //Create new series
+        XYChart.Series<Number, Number> series = new XYChart.Series<>();
+        series.setName("Chemical Concentration");
+        Random rand = new Random();
+        for (int i = 0; i < 17; i++) {
+            int y = rand.nextInt() % 3 + 2;
+            series.getData().add(new XYChart.Data<>(i*5, y));
+        }
+        series.getData().add(new XYChart.Data<>(17*5, 4));
+        series.getData().add(new XYChart.Data<>(18*5, 5));
+        series.getData().add(new XYChart.Data<>(19*5-2, 8));
+        series.getData().add(new XYChart.Data<>(19*5, 10));
+        series.getData().add(new XYChart.Data<>(19*5+2, 8));
+        series.getData().add(new XYChart.Data<>(20*5, 6));
+        series.getData().add(new XYChart.Data<>(21*5, 4));
+
+        for (int i = 22; i < 30; i++) {
+            int y = rand.nextInt() % 3 + 2;
             series.getData().add(new XYChart.Data<>(i*5, y));
         }
         return series;
