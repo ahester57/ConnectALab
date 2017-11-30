@@ -75,22 +75,7 @@ public class ASController extends Application
 
                 //Set data points
                 if (aaValidity == 1) {
-                    Random rand = new Random();
-                    for (int i = 0; i < 17; i++) {
-                        int y = rand.nextInt() % 5 + 10;
-                        series.getData().add(new XYChart.Data<>(i*5, y));
-                    }
-                    series.getData().add(new XYChart.Data<>(17*5, 17));
-                    series.getData().add(new XYChart.Data<>(18*5, 21));
-                    series.getData().add(new XYChart.Data<>(19*5, 40));
-                    series.getData().add(new XYChart.Data<>(20*5, 39));
-                    series.getData().add(new XYChart.Data<>(21*5, 36));
-                    series.getData().add(new XYChart.Data<>(22*5, 21));
-
-                    for (int i = 23; i < 30; i++) {
-                        int y = rand.nextInt() % 5 + 10;
-                        series.getData().add(new XYChart.Data<>(i*5, y));
-                    }
+                    series = getFortySeries();
 
                 } else if (aaValidity == 0) {
                     Random rand = new Random();
@@ -122,4 +107,26 @@ public class ASController extends Application
 
     }
 
+    private XYChart.Series getFortySeries() {
+        //Create new series
+        XYChart.Series<Number, Number> series = new XYChart.Series<>();
+        series.setName("Chemical Concentration");
+        Random rand = new Random();
+        for (int i = 0; i < 17; i++) {
+            int y = rand.nextInt() % 5 + 10;
+            series.getData().add(new XYChart.Data<>(i*5, y));
+        }
+        series.getData().add(new XYChart.Data<>(17*5, 17));
+        series.getData().add(new XYChart.Data<>(18*5, 21));
+        series.getData().add(new XYChart.Data<>(19*5, 40));
+        series.getData().add(new XYChart.Data<>(20*5, 39));
+        series.getData().add(new XYChart.Data<>(21*5, 36));
+        series.getData().add(new XYChart.Data<>(22*5, 21));
+
+        for (int i = 23; i < 30; i++) {
+            int y = rand.nextInt() % 5 + 10;
+            series.getData().add(new XYChart.Data<>(i*5, y));
+        }
+        return series;
+    }
 }
