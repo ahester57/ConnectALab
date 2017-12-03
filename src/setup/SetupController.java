@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -173,5 +174,82 @@ public class SetupController extends Application
     @FXML
     void fuelFlowClicked(MouseEvent event) {
         text_fuelflow.setText(Integer.toString((int)fuel_flow_slider.getValue()));
+    }
+
+    @FXML
+    void waveLengthTyped(KeyEvent event) {
+        if(!text_wavelength.getText().equals("")){
+            try {
+                wavelength_slider.setValue(Double.parseDouble(text_wavelength.getText()));
+            } catch(Exception exc){
+                wavelength_slider.setValue(0);
+            }
+        }
+    }
+
+    @FXML
+    void lightIntensityTyped(KeyEvent event) {
+        if(!text_lightintensity.getText().equals("")){
+            try {
+                light_intensity_slider.setValue(Double.parseDouble(text_lightintensity.getText()));
+            } catch(Exception exc){
+                light_intensity_slider.setValue(0);
+            }
+        }
+    }
+
+    @FXML
+    void lampCurrentTyped(KeyEvent event) {
+        if(!text_lampcurrent.getText().equals("")){
+            try {
+                lamp_current_slider.setValue(Double.parseDouble(text_lampcurrent.getText()));
+            } catch(Exception exc){
+                lamp_current_slider.setValue(0);
+            }
+        }
+    }
+
+    @FXML
+    void slitWidthTyped(KeyEvent event) {
+        if(!text_slitwidth.getText().equals("")){
+            try {
+                slit_width_slider.setValue(Double.parseDouble(text_slitwidth.getText()));
+            } catch(Exception exc){
+                slit_width_slider.setValue(0);
+            }
+        }
+    }
+
+    @FXML
+    void airFlowTyped(KeyEvent event) {
+        if(!text_airflow.getText().equals("")){
+            try {
+                air_flow_slider.setValue(Double.parseDouble(text_airflow.getText()));
+            } catch(Exception exc){
+                air_flow_slider.setValue(0);
+            }
+        }
+    }
+
+    @FXML
+    void fuelFlowTyped(KeyEvent event) {
+        if(!text_fuelflow.getText().equals("")){
+            try {
+                fuel_flow_slider.setValue(Double.parseDouble(text_fuelflow.getText()));
+            } catch(Exception exc){
+                fuel_flow_slider.setValue(0);
+            }
+        }
+    }
+
+    @FXML
+    void backgroundCorrectionTyped(KeyEvent event) {
+        if(!text_backgroundcorrect.getText().equals("")){
+            try {
+                background_correction_slider.setValue(Double.parseDouble(text_backgroundcorrect.getText()));
+            } catch(Exception exc){
+                background_correction_slider.setValue(0);
+            }
+        }
     }
 }

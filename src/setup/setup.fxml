@@ -60,9 +60,9 @@
                         <Label text="Lamp Current:" GridPane.rowIndex="6" />
                         <TextField fx:id="text_libraryname" prefHeight="34.0" prefWidth="131.0" GridPane.columnIndex="1" />
                         <TextField fx:id="text_methodtype" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField fx:id="text_wavelength" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <TextField fx:id="text_lightintensity" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <TextField fx:id="text_lampcurrent" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <TextField fx:id="text_wavelength" onKeyReleased="#waveLengthTyped" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="text_lightintensity" onKeyReleased="#lightIntensityTyped" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="text_lampcurrent" onKeyReleased="#lampCurrentTyped" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                   <Slider fx:id="wavelength_slider" blockIncrement="1.0" majorTickUnit="1.0" max="5.0" minorTickCount="0" onMouseClicked="#clicked" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="4.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <Slider fx:id="light_intensity_slider" blockIncrement="1.0" majorTickUnit="1.0" max="5.0" minorTickCount="0" onMouseClicked="#lightIntensityClicked" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="2.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                   <Slider fx:id="lamp_current_slider" blockIncrement="1.0" majorTickUnit="1.0" max="5.0" minorTickCount="0" onMouseClicked="#lampCurrentClicked" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="3.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
@@ -92,11 +92,11 @@
                         <Label text="Back Pressure:" GridPane.rowIndex="4" />
                         <Label text="Air Flow:" GridPane.rowIndex="5" />
                         <Label text="Fuel Flow:" GridPane.rowIndex="7" />
-                        <TextField fx:id="text_slitwidth" prefHeight="39.0" prefWidth="248.0" GridPane.columnIndex="1" />
-                        <TextField fx:id="text_backgroundcorrect" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="text_slitwidth" onKeyReleased="#slitWidthTyped" prefHeight="39.0" prefWidth="248.0" GridPane.columnIndex="1" />
+                        <TextField fx:id="text_backgroundcorrect" onKeyReleased="#backgroundCorrectionTyped" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <TextField fx:id="text_backpressure" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <TextField fx:id="text_airflow" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <TextField fx:id="text_fuelflow" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <TextField fx:id="text_airflow" onKeyReleased="#airFlowTyped" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <TextField fx:id="text_fuelflow" onKeyReleased="#fuelFlowTyped" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                   <Slider fx:id="slit_width_slider" blockIncrement="1.0" majorTickUnit="1.0" max="5.0" minorTickCount="0" onMouseClicked="#slitWidthClicked" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="3.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <Slider fx:id="background_correction_slider" blockIncrement="1.0" majorTickUnit="1.0" max="5.0" minorTickCount="0" onMouseClicked="#backgroundCorrectionClicked" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <Slider fx:id="air_flow_slider" blockIncrement="1.0" majorTickUnit="1.0" max="5.0" minorTickCount="0" onMouseClicked="#airFlowClicked" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
