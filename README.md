@@ -13,7 +13,7 @@
 Connect-A-Lab idea by Allen Savage
 
 To build and modify I recommend IntelliJ Community Edition, a Java IDE.
-You will need to go to File > Project Structure > Project and set the jdk to 1.8+. While there, set the
+You will need to go to File > Project Structure > Project and set the jdk to 1.8. While there, set the
 language level to 8 for jdk-1.8, and make a folder for the build files in the same tab.
 On the left, go to SDKs and make sure C:\\path\jfxrt.jar is in the classpath list in order to use JavaFX.
 
@@ -33,5 +33,8 @@ on the toolbar. If it's not there, go to View > check 'Toolbar'.
 
 That should get you up and running with Java.
 
-Here is a tutorial on building it to an executable jar file: https://stackoverflow.com/a/45303637/7032978
+Here is a tutorial on building it to an executable jar file:
+https://www.jetbrains.com/help/idea/applications-with-a-preloader-project-organization-and-packaging.html
+
+I haven't gotten it to build into a working jar yet, but someone will figure it out.
 
