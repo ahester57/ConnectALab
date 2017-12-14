@@ -1,6 +1,7 @@
 package data;
 
 public class CheckInput {
+    // All return 1 on valid, 0 for invalid
     private AtomicAbsorption aa;
 
     public CheckInput() {

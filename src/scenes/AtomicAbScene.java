@@ -6,6 +6,8 @@ import javafx.scene.*;
 
 public class AtomicAbScene extends Scene
 {
+    // This class extends Scene. In Setup Controller, when Done, set the new Scene to this Data type.
+    // Send it AtomicAbsorption object and a validity.
     // Decorates the standard constructor with a custom one
     public AtomicAbScene(Parent root, double width, double height, AtomicAbsorption aa, int validity)
     {

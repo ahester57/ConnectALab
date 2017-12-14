@@ -20,8 +20,7 @@ import scenes.AtomicAbScene;
 
 public class SetupController extends Application
 {
-
-
+    // Lots of FXML entities
     @FXML
     public Button button_done;
     public Button button_read;
@@ -45,7 +44,6 @@ public class SetupController extends Application
     public Slider air_flow_slider;
     public Slider fuel_flow_slider;
 
-
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("setup.fxml"));
@@ -62,8 +60,10 @@ public class SetupController extends Application
 
         try {
             if (event.getSource() == button_done) {
+                // On Done
                 AtomicAbsorption aas;
                 try {
+                    // to get data
                     int power = 5;
                     int slitWidth = Integer.parseInt(text_slitwidth.getText());
                     int wavelength = Integer.parseInt(text_wavelength.getText());
@@ -77,27 +77,27 @@ public class SetupController extends Application
                     aas = new AtomicAbsorption(power, slitWidth, wavelength, bgrdComp, lampCurr,
                                                         lightKnob, autoZeroBtn, readBtn, airFlow, fuelFlow);
                 } catch (NumberFormatException nfe) {
+                    // they didn't enter data
                     System.out.println("Please enter data.");
                     return;
                 }
-
+                // Verify that data is how it should be
                 CheckInput verify = new CheckInput(aas);
-
                 int validity = verify.checkAll();
 
                 if (validity == 0) {
                     System.out.println("Bad input.");
                 }
-
+                // load the analysis screen, pass aas & validity to the scene
                 root = FXMLLoader.load(getClass().getResource("../analysis/analysis.fxml"));
                 scene = new AtomicAbScene(root, 1000, 600, aas, validity);
-
                 stage = (Stage) button_done.getScene().getWindow();
                 stage.setTitle("Connect-A-Lab (Analysis)");
                 stage.setScene(scene);
                 stage.show();
 
             } else if (event.getSource() == button_read) {
+                // on Read, fill in correct data
                 System.out.println("Filling Data");
                 text_lightintensity.setText("2");
                 text_lampcurrent.setText("3");
@@ -111,6 +111,7 @@ public class SetupController extends Application
                 text_backpressure.setText("Default");
 
             } else if (event.getSource() == button_clear) {
+                // Clear all fields
                 System.out.println("Clearing Data");
                 text_lightintensity.setText("");
                 text_lampcurrent.setText("");
@@ -124,10 +125,9 @@ public class SetupController extends Application
                 text_backpressure.setText("");
 
             } else if (event.getSource() == button_backtomenu) {
-
+                // Go back to the menu
                 root = FXMLLoader.load(getClass().getResource("../startup/startup.fxml"));
                 scene = new Scene(root, 600, 400);
-
                 stage = (Stage) button_backtomenu.getScene().getWindow();
                 stage.setTitle("Connect-A-Lab");
                 stage.setScene(scene);

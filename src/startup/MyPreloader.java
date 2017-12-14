@@ -10,7 +10,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class MyPreloader extends Preloader {
-
+    // Starts the application with a short splash screen
     private Stage preloaderStage;
 
     @Override
