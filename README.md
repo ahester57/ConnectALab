@@ -10,10 +10,28 @@
 ##### CS 4500 - Software Engineering
 ##### University of Missouri - St. Louis
 
-This will be our repo for the group Project  
-Connect-A-Lab aims to simulate expensive chemistry equipment using 
-RaspberryPis and various sensors.
-
 Connect-A-Lab idea by Allen Savage
 
-More later.
+To build and modify I recommend IntelliJ Community Edition, a Java IDE.
+You will need to go to File > Project Structure > Project and set the jdk to 1.8+. While there, set the
+language level to 8 for jdk-1.8, and make a folder for the build files in the same tab.
+On the left, go to SDKs and make sure C:\\path\jfxrt.jar is in the classpath list in order to use JavaFX.
+
+Now exit out of that.
+In IntelliJ on the left side, you can view your files. Open ConnectALab to see project structure.
+Now right-click on the src directory, and, at nearly the bottom, choose "Mark Directory As>" and choose
+"Sources root".
+
+Now you can build and run the project.
+Go to Run > Edit Configurations
+Press the green plus. Now you have to set the Main class. If you click on the 3 dots on the right, it will show
+you potential Main classes. Pick "startup.Main".
+Great. Now go to Build > Build Project
+It will build for the first time. You will not have to do this again.
+From now on, you can run it at any time by going to Run > Run 'Main', or by pressing the green play button
+on the toolbar. If it's not there, go to View > check 'Toolbar'.
+
+That should get you up and running with Java.
+
+Here is a tutorial on building it to an executable jar file: https://stackoverflow.com/a/45303637/7032978
+

@@ -1,7 +1,7 @@
 package data;
 
 public class AtomicAbsorption {
-	// Holds all the data 
+	// Holds all the data
 	private int power;
 	private int slitWidth;
 	private int wavelength;
